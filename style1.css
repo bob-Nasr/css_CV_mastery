@@ -1,0 +1,224 @@
+body {
+  font-family: sans-serif;
+}
+
+h3 {
+  margin: 3px 0px;
+  border-bottom: 1px solid rgb(204, 204, 204);
+}
+h3:before {
+  display: inline;
+  vertical-align: middle;
+  color: red;
+  font-size: 100px;
+  content: "\2022";
+  line-height: 50px;
+}
+
+/*--------------HEADER-------------*/
+
+header {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background-color: rgb(153, 153, 153);
+  color: red;
+  width: 100%;
+}
+header div {
+  display: grid;
+  grid-template-columns: repeat(2, fit-content(100%));
+  padding-left: 130px;
+  margin-left: 35px;
+}
+
+hgroup {
+  grid-column: 1/2;
+  display: flex;
+  flex-direction: column;
+}
+hgroup h1,
+hgroup h2 {
+  display: inline;
+}
+header h1 {
+  margin-bottom: 5px;
+}
+
+figure {
+  grid-column: 2/3;
+}
+
+/*----------------CONTENT-------------------*/
+
+.content {
+  position: absolute;
+  top: 146px;
+  display: grid;
+  grid-template-columns: 0.5fr 2fr 2fr;
+  grid-template-rows: repeat(3, auto);
+  margin-top: 5%;
+  padding-right: 5%;
+}
+
+/*--------------ABOUT-------------*/
+
+#about {
+  grid-column: 2/3;
+}
+
+/*--------------COMPETENCIES-------------*/
+
+#competencies {
+  grid-column: 3/4;
+}
+
+.skill {
+  border-style: solid;
+  border-color: rgb(204, 204, 204);
+  margin: 5px;
+}
+
+.skills-primary .skill {
+  background-color: red;
+  color: white;
+}
+.skills-secondary .skill {
+  background-color: rgb(255, 77, 77);
+  color: white;
+}
+
+.skills .skill {
+  animation: 1s ease-out 0s 1 zoom;
+  transform-origin: left center;
+}
+
+@keyframes zoom {
+  0% {
+    transform: scale(0, 1);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}
+
+.skills-primary:before {
+  content: "Main";
+}
+.skills-secondary:before {
+  content: "Other";
+}
+
+div [data-skill*="1"] {
+  background-image: linear-gradient(90deg, red 10%, rgb(204, 204, 204) 10.1%);
+}
+div [data-skill*="3"] {
+  background-image: linear-gradient(90deg, red 30%, rgb(204, 204, 204) 30.1%);
+}
+div [data-skill*="5"] {
+  background-image: linear-gradient(90deg, red 50%, rgb(204, 204, 204) 50.1%);
+}
+div [data-skill*="7"] {
+  background-image: linear-gradient(90deg, red 70%, rgb(204, 204, 204) 70.1%);
+}
+div [data-skill*="9"] {
+  background-image: linear-gradient(90deg, red 90%, rgb(204, 204, 204) 90.1%);
+}
+
+/*--------------EXPERIENCE + EDUCATION-------------*/
+
+#experiences {
+  grid-column: 2/3;
+}
+#education {
+  grid-column: 3/4;
+}
+
+#experiences h4,
+#education h4 {
+  margin-bottom: 5px;
+}
+
+.experience-type {
+  color: red;
+  font-weight: bold;
+}
+
+.experience-institution {
+  color: red;
+  font-weight: lighter;
+}
+.experience-institution:before {
+  color: red;
+  content: "@ ";
+}
+
+.experience-details {
+  color: rgb(153, 153, 153);
+  text-indent: 10px;
+}
+.experience-date-separator {
+  color: red;
+}
+.experience-date::before {
+  content: "on";
+}
+.experience-location::before {
+  content: "In ";
+}
+
+/*--------------HOBBIES-------------*/
+
+#hobbies {
+  grid-column: 2/3;
+}
+
+/*--------------CONTACT-------------*/
+
+#contact {
+  position: absolute;
+  right: 0px;
+  top: -26%;
+  width: 45%;
+}
+
+@media only screen and (max-width: 1349px) {
+  #contact {
+    position: static;
+    bottom: 0px;
+    width: 100%;
+  }
+}
+
+#contact h3 {
+  display: none;
+}
+
+.contacts {
+  display: table;
+}
+
+.contact {
+  display: table-row;
+}
+
+.contact-type {
+  display: table-cell;
+  padding: 5px;
+  background-color: red;
+  color: white;
+}
+
+.contact-value {
+  display: table-cell;
+  padding: 5px;
+  width: 100%;
+  background-color: black;
+  color: red;
+  padding-right: 1vw;
+}
+
+.contact-value a {
+  color: red;
+  text-decoration: none;
+}
